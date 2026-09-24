@@ -1,0 +1,12 @@
+[dotfiles]
+"~/.config/mise/config.toml" = { source = "mise.toml" }
+"~/.scripts" = { source = "scripts" }
+"~/.bashrc.d" = { source = "profile" }
+
+
+
+[tasks.where]
+run = "pwd; echo {{ config_root }}"
+
+[tools]
+gh = "latest"
