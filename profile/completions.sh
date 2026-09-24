@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 export FZF_COMPLETION_TRIGGER=','
 
 
