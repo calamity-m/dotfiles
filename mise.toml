@@ -2,6 +2,7 @@
 "~/.config/mise/config.toml" = { source = "mise.toml" }
 "~/.scripts" = { source = "scripts" }
 "~/.bashrc.d" = { source = "profile" }
+"~/.config/peanutbutter" = { source = "peanutbutter" }
 
 
 
@@ -9,4 +10,6 @@
 run = "pwd; echo {{ config_root }}"
 
 [tools]
+fzf = "latest"
 gh = "latest"
+"github:calamity-m/peanutbutter" = "latest"
