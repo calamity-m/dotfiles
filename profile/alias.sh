@@ -1,1 +1,2 @@
 alias lg='lazygit'
+
