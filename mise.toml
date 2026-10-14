@@ -15,6 +15,17 @@ codex = "latest"
 fzf = "latest"
 gh = "latest"
 "github:calamity-m/peanutbutter" = "latest"
+go = "latest"
+gradle = "latest"
+java = "lts"
 lazygit = "latest"
+maven = "latest"
+node = "24.21.0"
+npm = "12.2.0"
+rust = "latest"
+uv = "latest"
 zellij = "latest"
 zoxide = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = ["node"]
