@@ -6,7 +6,7 @@ log() {
 
 # Append bashrc.d sourcing block if not already present
 bashrc_marker="# slop:bashrc.d"
-if [[ -f "$HOME/.bashrc" ]] && ! grep -qF "$bashrc_marker" "$HOME/.bashrc"; then
+if [[ ! -f "$HOME/.bashrc" ]] || ! grep -qF "$bashrc_marker" "$HOME/.bashrc"; then
   cat >> "$HOME/.bashrc" <<EOF
 
 $bashrc_marker

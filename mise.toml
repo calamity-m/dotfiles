@@ -5,7 +5,8 @@
 "~/.config/peanutbutter" = { source = "peanutbutter" }
 "~/.config/zellij" = { source = "zellij" }
 
-
+[bootstrap.hooks]
+post-dotfiles = 'bash "$HOME/.scripts/bashrc.d.sh"'
 
 [tasks.where]
 run = "pwd; echo {{ config_root }}"
