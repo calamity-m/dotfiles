@@ -28,4 +28,4 @@ zellij = "latest"
 zoxide = "latest"
 
 [settings]
-idiomatic_version_file_enable_tools = ["node"]
+idiomatic_version_file_enable_tools = ["node", "go"]
