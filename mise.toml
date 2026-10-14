@@ -11,6 +11,7 @@
 run = "pwd; echo {{ config_root }}"
 
 [tools]
+codex = "latest"
 fzf = "latest"
 gh = "latest"
 "github:calamity-m/peanutbutter" = "latest"
