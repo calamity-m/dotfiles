@@ -1,0 +1,2 @@
+// Spawn vicinae server for a custom launcher
+spawn-at-startup "/home/mark/.local/bin/vicinae" "server"
