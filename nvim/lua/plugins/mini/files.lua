@@ -3,6 +3,7 @@ require('mini.files').setup({
     close = '<Esc>',
     go_in_plus = '<CR>',
     go_in = '',
+    show_help = '?',
   },
 })
 
