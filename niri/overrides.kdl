@@ -2,17 +2,19 @@
 // Spawn vicinae server for a custom launcher
 spawn-at-startup "/home/mark/.local/bin/vicinae" "server"
 
-// --- Applications ---
-Mod+B hotkey-overlay-title="Open Browser: Zen" { spawn "flatpak" "run" "app.zen_browser.zen"; }
-Mod+Space hotkey-overlay-title="Open Launcher: Vicinae" { spawn "/home/mark/.local/bin/vicinae" "toggle"; }
+binds {
+    // --- Applications ---
+    Mod+B hotkey-overlay-title="Open Browser: Zen" { spawn "flatpak" "run" "app.zen_browser.zen"; }
+    Mod+Space hotkey-overlay-title="Open Launcher: Vicinae" { spawn "/home/mark/.local/bin/vicinae" "toggle"; }
 
-// --- Window/Focus Movement ---
-Mod+Up                              { focus-window-or-workspace-up; }
-Mod+K                               { focus-window-or-workspace-up; }
-Mod+Down                            { focus-window-or-workspace-down; }
-Mod+J                               { focus-window-or-workspace-down; }
+    // --- Window/Focus Movement ---
+    Mod+Up                              { focus-window-or-workspace-up; }
+    Mod+K                               { focus-window-or-workspace-up; }
+    Mod+Down                            { focus-window-or-workspace-down; }
+    Mod+J                               { focus-window-or-workspace-down; }
 
-Mod+CTRL+UP                         { move-window-up-or-to-workspace-up; }
-Mod+CTRL+K                          { move-window-up-or-to-workspace-up; }
-Mod+CTRL+Down                       { move-window-down-or-to-workspace-down; }
-Mod+CTRL+J                          { move-window-down-or-to-workspace-down; }
+    Mod+CTRL+UP                         { move-window-up-or-to-workspace-up; }
+    Mod+CTRL+K                          { move-window-up-or-to-workspace-up; }
+    Mod+CTRL+Down                       { move-window-down-or-to-workspace-down; }
+    Mod+CTRL+J                          { move-window-down-or-to-workspace-down; }
+}
