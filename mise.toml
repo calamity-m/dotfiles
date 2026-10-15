@@ -4,6 +4,7 @@
 "~/.bashrc.d" = { source = "profile" }
 "~/.config/peanutbutter" = { source = "peanutbutter" }
 "~/.config/zellij" = { source = "zellij" }
+"~/.config/nvim" = { source = "nvim" }
 "~/.config/niri/overrides.kdl" = { source = "niri/overrides.kdl" }
 
 [bootstrap.hooks]

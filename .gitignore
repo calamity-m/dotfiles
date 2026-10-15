@@ -1,0 +1,16 @@
+# Neovim runtime logs
+nvim.log
+
+# Vim/Neovim swap and backup files
+*.swp
+*.swo
+*.swn
+*~
+
+# Neovim persistent state (if stored beside the configuration)
+/nvim/shada/
+/nvim/undo/
+/nvim/swap/
+/nvim/backup/
+*.shada
+*.shada.tmp.*
