@@ -17,3 +17,6 @@ nvim.log
 /nvim/backup/
 *.shada
 *.shada.tmp.*
+
+# Coding agents
+*session*.md
