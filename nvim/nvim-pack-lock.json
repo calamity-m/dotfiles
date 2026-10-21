@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "base16-nvim": {
+      "rev": "7183774e90841f4bd27a47cb6e75cf532fd1192d",
+      "src": "https://github.com/RRethy/base16-nvim"
+    },
     "mini.nvim": {
       "rev": "8831fa150fa26492cfe135801fa498132f1491d2",
       "src": "https://github.com/nvim-mini/mini.nvim"
