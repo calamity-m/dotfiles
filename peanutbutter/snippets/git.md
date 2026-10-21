@@ -34,6 +34,19 @@ git commit -m "<@type>(<@scope>): <@subject>"
 git commit --amend -m "<@message>"
 ```
 
+## list tracked files alongside changed ones
+
+This will print every single tracked file in the repository prefixed with a status tag:
+
+* H / C : Cached / Tracked (Unchanged)
+* M : Unstaged modification
+* R : Unstaged removal/deletion
+* C : Unmerged / Conflict
+
+```bash
+git ls-files -t
+```
+
 ## pull main without switching
 
 Fetches `main` from the remote into the local `main` branch while staying on your current branch.
