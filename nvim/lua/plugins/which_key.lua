@@ -9,5 +9,6 @@ wk.setup({
 })
 
 wk.add({
-{ "<leader>c", group = "Code" },
+  { "<leader>c", group = "Code" },
+  { "<leader>f", group = "Telescope" },
 })
