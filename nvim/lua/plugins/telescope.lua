@@ -1,9 +1,19 @@
-require('telescope').setup{
+require('telescope').setup({
+  extensions = {
+    ['ui-select'] = {
+      require('telescope.themes').get_dropdown({}),
+    },
+  },
+})
 
-}
+-- Load the telescope-ui-select.nvim plugin
+require('telescope').load_extension('ui-select')
 
+
+-- Define builtin here so it can be used by the custom function
 local builtin = require('telescope.builtin')
 
+-- Custom find_files function, which includes gitignored files (barring .git folder itself)
 local function find_files_with_ignored()
   -- vim.fn exposes Vim's built-in functions to Lua. getcwd() returns Neovim's
   -- current working directory; both Git and Telescope should search from here.
@@ -97,9 +107,13 @@ local function find_files_with_ignored()
   builtin.find_files(opts)
 end
 
-vim.keymap.set('n', '<leader>ff', find_files_with_ignored, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>F', find_files_with_ignored, { desc = 'Telescope find files' })
+-- Keymaps
+local map = vim.keymap.set
 
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+map('n', '<leader>ff', find_files_with_ignored, { desc = 'Telescope find files' })
+map('n', '<leader>F', find_files_with_ignored, { desc = 'Telescope find files' })
+map('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+map('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+map('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+
+-- LSP keymaps are set in lspconfig

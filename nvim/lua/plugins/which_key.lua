@@ -11,4 +11,5 @@ wk.setup({
 wk.add({
   { "<leader>c", group = "Code" },
   { "<leader>f", group = "Telescope" },
+  { "<leader>g", group = "Search LSP" },
 })
