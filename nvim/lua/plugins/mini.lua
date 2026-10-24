@@ -17,3 +17,8 @@ require("mini.cursorword").setup()
 require("mini.cmdline").setup()
 require("mini.notify").setup()
 require("mini.indentscope").setup()
+require("mini.splitjoin").setup({
+	mappings = {
+		toggle = "<leader>cs",
+	},
+})
