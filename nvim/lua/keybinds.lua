@@ -4,8 +4,21 @@ local map = vim.keymap.set
 map("n", "<C-Tab>", "<cmd>bnext<CR>", { desc = "Next buffer" })
 map("n", "<S-Tab>", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
 
+-- Window navigation
+map("n", "<C-h>", "<C-w>h", { desc = "Window Left" })
+map("n", "<C-j>", "<C-w>j", { desc = "Window Down" })
+map("n", "<C-k>", "<C-w>k", { desc = "Window Up" })
+map("n", "<C-l>", "<C-w>l", { desc = "Window Right" })
+
+-- Buffer management
+map("n", "<leader>bdd", "<cmd>bdelete<CR>", { desc = "Delete Buffer" })
+map("n", "<leader>bda", "<cmd>%bd<CR>", { desc = "Delete All Buffers" })
+map("n", "<leader>bdo", "<cmd>%bd|e#|bd! #<CR>", { desc = "Delete Other Buffers" })
+map("n", "<leader>bdA", "<cmd>%bd!<CR>", { desc = "Force Delete All Buffers" })
+map("n", "<leader>bdO", "<cmd>%bd!|e#|bd! #<CR>", { desc = "Force Delete Other Buffers" })
+
 -- Helpful clear search and multicursors on escape
-vim.keymap.set("n", "<Esc>", function()
+map("n", "<Esc>", function()
   -- Clear search highlighting.
   vim.cmd.nohlsearch()
 
