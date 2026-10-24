@@ -12,3 +12,7 @@ require("plugins.mini.diff")
 -- direct mini setup
 require("mini.tabline").setup()
 require("mini.statusline").setup()
+require("mini.cursorword").setup()
+require("mini.cmdline").setup()
+require("mini.notify").setup()
+require("mini.indentscope").setup()
