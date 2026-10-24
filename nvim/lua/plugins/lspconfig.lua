@@ -21,8 +21,58 @@ vim.lsp.config("peanutbutter", {
 	},
 	workspace_required = true,
 })
-
 vim.lsp.enable("peanutbutter")
+
+-- Go
+vim.lsp.config("gopls", {
+	settings = {
+		gopls = {
+			hints = {
+				assignVariableTypes = true,
+				compositeLiteralFields = true,
+				compositeLiteralTypes = true,
+				constantValues = true,
+				functionTypeParameters = true,
+				parameterNames = true,
+				rangeVariableTypes = true,
+			},
+		},
+	},
+})
+vim.lsp.enable("gopls")
+
+-- Rust
+vim.lsp.config("rust_analyzer", {
+	settings = {
+		["rust-analyzer"] = {
+			inlayHints = {
+				typeHints = {
+					enable = true,
+				},
+				parameterHints = {
+					enable = true,
+				},
+				chainingHints = {
+					enable = true,
+				},
+			},
+		},
+	},
+})
+vim.lsp.enable("rust_analyzer")
+
+-- Python
+vim.lsp.config("ty", {
+	settings = {
+		ty = {
+			inlayHints = {
+				variableTypes = true,
+				callArgumentNames = true,
+			},
+		},
+	},
+})
+vim.lsp.enable("ty")
 
 -- Keymaps
 local map = vim.keymap.set
@@ -54,8 +104,6 @@ vim.api.nvim_create_user_command("WriteNoFormat", function()
 end, { desc = "Write current file without formatting" })
 map("n", "<leader>cW", "<cmd>WriteNoFormat<CR>", { desc = "Write without formatting" })
 
-
 -- Documentation
 map('n', '<leader>gh', vim.lsp.buf.hover, { desc = 'Hover documentation' })
-
 
