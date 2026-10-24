@@ -9,8 +9,9 @@ require("plugins.mini.statuscolumn")
 require("plugins.mini.git")
 require("plugins.mini.diff")
 require("plugins.mini.jump2d")
+require("plugins.mini.pairs")
 
--- direct mini setup
+-- direct mini setup ([])
 require("mini.tabline").setup()
 require("mini.statusline").setup()
 require("mini.cursorword").setup()
