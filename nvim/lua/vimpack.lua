@@ -10,7 +10,6 @@ map("n", "<leader>vpl", function()
 	vim.pack.update(nil, { offline = true })
 end, { desc = "List Plugins" })
 
-
 map("n", "<leader>vpd", function()
 	local inactive = vim.iter(vim.pack.get())
 		:filter(function(plugin)

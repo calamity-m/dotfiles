@@ -4,6 +4,10 @@
       "rev": "7183774e90841f4bd27a47cb6e75cf532fd1192d",
       "src": "https://github.com/RRethy/base16-nvim"
     },
+    "conform.nvim": {
+      "rev": "016802de402556da54c36bd7359b441266b01cdd",
+      "src": "https://github.com/stevearc/conform.nvim"
+    },
     "mason-lspconfig.nvim": {
       "rev": "c302d3fcaf4727ee7d48b20e7c293668ed1f6d98",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"

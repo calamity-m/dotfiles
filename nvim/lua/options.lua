@@ -28,10 +28,9 @@ vim.opt.showtabline = 2
 vim.o.mousescroll = "ver:25,hor:6"
 vim.o.switchbuf = "useopen,usetab"
 
--- Start off with fold level of 99 rather than 0 
+-- Start off with fold level of 99 rather than 0
 vim.opt.foldlevel = 99 -- current window
 vim.opt.foldlevelstart = 99 -- starting level on new buffer
 
-
 -- Enable experiemental ui2
-require('vim._core.ui2').enable()
+require("vim._core.ui2").enable()

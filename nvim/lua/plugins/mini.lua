@@ -6,5 +6,4 @@ require("mini.icons").mock_nvim_web_devicons()
 require("plugins.mini.files")
 
 -- mini.tabline setup
-require('mini.tabline').setup()
-
+require("mini.tabline").setup()

@@ -9,20 +9,20 @@ wk.setup({
 })
 
 wk.add({
-  { "<leader>c", group = "Code" },
-  { "<leader>f", group = "Telescope" },
-  { "<leader>g", group = "Search LSP" },
+	{ "<leader>c", group = "Code" },
+	{ "<leader>f", group = "Telescope" },
+	{ "<leader>g", group = "Search LSP" },
 })
 
 -- Multicursors
 wk.add({
-  { "<leader>m", group = "Multicursor" },
-  { "<leader>mt", "Q", desc = "Toggle cursor here" },
-  { "<leader>mw", "zq*", desc = "Cursors at every matching word" },
-  { "<leader>mr", "gQ", desc = "Restore cleared cursors" },
-  {
-    "<leader>mh",
-    "<cmd>help multicursor<CR>",
-    desc = "Multicursor help",
-  },
+	{ "<leader>m", group = "Multicursor" },
+	{ "<leader>mt", "Q", desc = "Toggle cursor here" },
+	{ "<leader>mw", "zq*", desc = "Cursors at every matching word" },
+	{ "<leader>mr", "gQ", desc = "Restore cleared cursors" },
+	{
+		"<leader>mh",
+		"<cmd>help multicursor<CR>",
+		desc = "Multicursor help",
+	},
 })
