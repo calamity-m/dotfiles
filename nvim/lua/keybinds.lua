@@ -1,5 +1,9 @@
 local map = vim.keymap.set
 
+-- Cycle through buffers in normal mode (Shift-Tab is named <S-Tab>).
+map("n", "<C-Tab>", "<cmd>bnext<CR>", { desc = "Next buffer" })
+map("n", "<S-Tab>", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
+
 -- Helpful clear search and multicursors on escape
 vim.keymap.set("n", "<Esc>", function()
   -- Clear search highlighting.
