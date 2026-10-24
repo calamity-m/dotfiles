@@ -24,7 +24,6 @@ conform.setup({
 		cjs = { "prettier", "oxfmt" }, -- CommonJS modules
 		vue = { "prettier", "oxfmt" }, -- mainly script blocks
 		toml = { "tombi" }, -- proper TOML formatter
-		kdl = { "kdlfmt" }, -- KDL formatter
 		xml = { "xmlformatter" }, -- XML formatter
 	},
 

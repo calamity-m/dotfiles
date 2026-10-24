@@ -57,7 +57,6 @@ local tools = {
 	"goimports",
 	"java-debug-adapter",
 	"java-test",
-	"kdlfmt",
 	"xmlformatter",
 	"shellcheck",
 	"oxfmt",
