@@ -13,9 +13,12 @@ vim.pack.add({
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/stevearc/conform.nvim" },
 
-	-- Editor
+	-- Editor plugins
 	{ src = "https://github.com/nvim-telescope/telescope.nvim" },
 	{ src = "https://github.com/nvim-telescope/telescope-ui-select.nvim" },
+
+	-- Trial plugins
+	{ src = "https://github.com/tris203/precognition.nvim" },
 })
 
 local plugin_modules = {
@@ -26,6 +29,7 @@ local plugin_modules = {
 	"plugins.mason",
 	"plugins.lspconfig",
 	"plugins.conform",
+	"plugins.precognition",
 }
 
 for _, module in ipairs(plugin_modules) do
