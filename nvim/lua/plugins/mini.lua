@@ -8,6 +8,7 @@ require("plugins.mini.completions")
 require("plugins.mini.statuscolumn")
 require("plugins.mini.git")
 require("plugins.mini.diff")
+require("plugins.mini.jump2d")
 
 -- direct mini setup
 require("mini.tabline").setup()
