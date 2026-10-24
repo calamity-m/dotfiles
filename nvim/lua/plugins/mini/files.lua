@@ -1,10 +1,53 @@
 local MiniFiles = require('mini.files')
 
 
--- Toggle to showcase explorer
+-- Toggle the explorer, selecting the current file when it exists on disk.
 vim.keymap.set("n", "<leader>e", function()
+  -- close() returns nil when no explorer was open, so only then do we open one.
   if MiniFiles.close() == nil then
-    MiniFiles.open()
+    -- Buffer 0 means the current buffer. Unnamed buffers have an empty path.
+    local path = vim.api.nvim_buf_get_name(0)
+    local cwd = vim.fn.getcwd()
+    -- A branch is an ordered list of paths, each inside the previous directory.
+    -- Start with the file and add its parents to the front below.
+    local branch = { path }
+
+    -- Only build a branch for an existing, readable file.
+    if vim.fn.filereadable(path) == 1 then
+      -- ':h' removes the last path component, giving us the parent directory.
+      local parent = vim.fn.fnamemodify(path, ':h')
+      -- Walk upwards until we reach cwd or the filesystem root.
+      -- At the root, asking for the parent returns the same path.
+      while parent ~= cwd and parent ~= vim.fn.fnamemodify(parent, ':h') do
+        -- Inserting at position 1 keeps the branch ordered from parent to child.
+        table.insert(branch, 1, parent)
+        parent = vim.fn.fnamemodify(parent, ':h')
+      end
+
+      -- Reaching cwd means the file is somewhere inside it.
+      -- Example branch: { '/project', '/project/src', '/project/src/main.lua' }.
+      if parent == cwd then
+        table.insert(branch, 1, cwd)
+        -- The opening directory becomes the anchor used by our custom go_out.
+        -- Keep that boundary at cwd; false starts fresh instead of restoring history.
+        MiniFiles.open(cwd, false)
+        -- Including the file positions the directory cursor on its entry.
+        -- It also adds a file preview, even with the usual preview option disabled.
+        MiniFiles.set_branch(branch)
+        -- Remove the final item (the file) and display only the directories.
+        -- mini.files remembers the cursor position, so the file stays selected
+        -- while its preview disappears. The cwd anchor is unchanged.
+        table.remove(branch)
+        MiniFiles.set_branch(branch)
+        -- Opening is complete; skip the fallback below.
+        return
+      end
+    end
+
+    -- Fallback: a file outside cwd opens with its parent directory as the anchor.
+    -- Unnamed buffers and files that aren't readable on disk open at cwd instead.
+    -- Lua's `condition and value_a or value_b` selects between these two paths.
+    MiniFiles.open(vim.fn.filereadable(path) == 1 and path or cwd, false)
   end
 end, {
 	desc = "Explorer Toggle",
