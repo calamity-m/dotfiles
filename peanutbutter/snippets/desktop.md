@@ -31,4 +31,3 @@ Recursively find PNG files in the current directory, select one, and copy it int
     printf 'Installed icon: %s\nDesktop entry: Icon=%s\n' "$icon_directory/$icon_name.png" "$icon_name"
 )
 ```
-

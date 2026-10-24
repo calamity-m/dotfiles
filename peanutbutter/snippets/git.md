@@ -1,5 +1,5 @@
 ---
-tags: 
+tags:
   - git
   - development
 description: A curated set of git commands and snippets
@@ -38,10 +38,10 @@ git commit --amend -m "<@message>"
 
 This will print every single tracked file in the repository prefixed with a status tag:
 
-* H / C : Cached / Tracked (Unchanged)
-* M : Unstaged modification
-* R : Unstaged removal/deletion
-* C : Unmerged / Conflict
+- H / C : Cached / Tracked (Unchanged)
+- M : Unstaged modification
+- R : Unstaged removal/deletion
+- C : Unmerged / Conflict
 
 ```bash
 git ls-files -t

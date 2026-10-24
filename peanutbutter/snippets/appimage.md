@@ -66,4 +66,3 @@ Extract an AppImage selected from the current directory and install its bundled 
     printf 'Installed icon: %s\nDesktop entry: Icon=%s\n' "$icon_directory/$icon_name.$icon_extension" "$icon_name"
 )
 ```
-
