@@ -74,6 +74,51 @@ vim.lsp.config("ty", {
 })
 vim.lsp.enable("ty")
 
+-- Helm
+vim.lsp.config("helm_ls", {
+settings = {
+    ['helm-ls'] = {
+      yamlls = {
+        path = "yaml-language-server",
+      }
+    }
+  }
+})
+vim.filetype.add({
+  pattern = {
+    [".*/templates/.*%.yaml"] = function(_, bufnr)
+      if vim.fs.root(bufnr, { "Chart.yaml" }) then
+        return "helm"
+      end
+      return "yaml"
+    end,
+    [".*/templates/.*%.yml"] = function(_, bufnr)
+      if vim.fs.root(bufnr, { "Chart.yaml" }) then
+        return "helm"
+      end
+      return "yaml"
+    end,
+  [".*/values%.yaml"] = function(_, bufnr)
+      if vim.fs.root(bufnr, { "Chart.yaml" }) then
+      return "yaml.helm-values"
+    end
+    return "yaml"
+  end,
+  [".*/values%.yml"] = function(_, bufnr)
+      if vim.fs.root(bufnr, { "Chart.yaml" }) then
+      return "yaml.helm-values"
+    end
+    return "yaml"
+  end,
+[".*/templates/.*%.tpl"] = function(_, bufnr)
+  if vim.fs.root(bufnr, { "Chart.yaml" }) then
+    return "helm"
+  end
+end,
+  },
+})
+vim.lsp.enable("helm_ls")
+
 -- Keymaps
 local map = vim.keymap.set
 
