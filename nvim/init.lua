@@ -40,3 +40,6 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 
 -- Apply once now: the initial Matugen setup above has already finished.
 transparent_background()
+
+local ok, matugen = pcall(require, 'matugen')
+if ok then matugen.setup() end
