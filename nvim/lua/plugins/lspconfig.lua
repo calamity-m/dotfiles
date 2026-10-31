@@ -110,6 +110,19 @@ vim.filetype.add({
 			end
 			return "yaml"
 		end,
+		-- Per-environment values overrides, e.g. values-prod.yaml or environments/prod.yaml
+		[".*/values%-.*%.ya?ml"] = function(_, bufnr)
+			if vim.fs.root(bufnr, { "Chart.yaml" }) then
+				return "yaml.helm-values"
+			end
+			return "yaml"
+		end,
+		[".*/environments/.*%.ya?ml"] = function(_, bufnr)
+			if vim.fs.root(bufnr, { "Chart.yaml" }) then
+				return "yaml.helm-values"
+			end
+			return "yaml"
+		end,
 		[".*/templates/.*%.tpl"] = function(_, bufnr)
 			if vim.fs.root(bufnr, { "Chart.yaml" }) then
 				return "helm"
