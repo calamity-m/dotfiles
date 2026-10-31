@@ -152,6 +152,12 @@ keytool -importkeystore -srckeystore <@p12> -srcstoretype PKCS12 -destkeystore <
 keytool -importkeystore -srckeystore <@jks> -srcstoretype JKS -destkeystore <@out_p12> -deststoretype PKCS12
 ```
 
+## Convert cert and key to p12
+
+```bash
+openssl pkcs12 -export -in <@cert> -inkey <@key> -out <@out_p12>
+```
+
 ## Delete alias from JKS keystore
 
 ```bash
