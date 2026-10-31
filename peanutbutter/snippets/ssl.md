@@ -82,7 +82,7 @@ openssl pkcs12 -legacy -in <@p12> -info -noout
 openssl pkcs12 -in <@p12> -nodes | openssl pkcs12 -export -out <@out_p12>
 ```
 
-## Create RSA key
+## Create RSA private key
 
 ```bash
 openssl genrsa -out <@out_key> <@bits>
