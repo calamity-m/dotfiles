@@ -4,12 +4,14 @@ require("mini.icons").mock_nvim_web_devicons()
 
 -- mini submodules
 require("plugins.mini.files")
+require("plugins.mini.snippets")
 require("plugins.mini.completions")
 require("plugins.mini.statuscolumn")
 require("plugins.mini.git")
 require("plugins.mini.diff")
 require("plugins.mini.jump2d")
 require("plugins.mini.pairs")
+require("plugins.mini.notify")
 
 -- direct mini setup ([])
 require("mini.tabline").setup()

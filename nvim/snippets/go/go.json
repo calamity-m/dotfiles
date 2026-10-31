@@ -1,0 +1,115 @@
+{
+  "if.err": {
+    "prefix": "if.err",
+    "body": [
+      "if err != nil {",
+      "\treturn err",
+      "}",
+      "$0"
+    ],
+    "description": "Return the error unchanged."
+  },
+  "if.err.wrap": {
+    "prefix": "if.err.wrap",
+    "body": [
+      "if err != nil {",
+      "\treturn fmt.Errorf(\"${1:context}: %w\", err)",
+      "}",
+      "$0"
+    ],
+    "description": "Wrap the error with context using %w."
+  },
+  "if.err.nil": {
+    "prefix": "if.err.nil",
+    "body": [
+      "if err != nil {",
+      "\treturn ${1:nil}, err",
+      "}",
+      "$0"
+    ],
+    "description": "Return zero value and the error."
+  },
+  "if.err.nil.wrap": {
+    "prefix": "if.err.nil.wrap",
+    "body": [
+      "if err != nil {",
+      "\treturn ${1:nil}, fmt.Errorf(\"${2:context}: %w\", err)",
+      "}",
+      "$0"
+    ],
+    "description": "Return zero value and a wrapped error."
+  },
+  "if.err.fatal": {
+    "prefix": "if.err.fatal",
+    "body": [
+      "if err != nil {",
+      "\tlog.Fatalf(\"${1:context}: %v\", err)",
+      "}",
+      "$0"
+    ],
+    "description": "Log the error and exit. For main/setup code only."
+  },
+  "err.assign": {
+    "prefix": "err.assign",
+    "body": [
+      "${1:value}, err := ${2:call}",
+      "if err != nil {",
+      "\treturn ${3:err}",
+      "}",
+      "$0"
+    ],
+    "description": "Call returning (value, error) with an inline error check."
+  },
+  "if.err.inline": {
+    "prefix": "if.err.inline",
+    "body": [
+      "if err := ${1:call}; err != nil {",
+      "\treturn ${2:err}",
+      "}",
+      "$0"
+    ],
+    "description": "Scope the error to the if statement for error-only calls."
+  },
+  "errors.is": {
+    "prefix": "errors.is",
+    "body": [
+      "if errors.Is(err, ${1:target}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Branch when err matches a sentinel error anywhere in its chain."
+  },
+  "errors.as": {
+    "prefix": "errors.as",
+    "body": [
+      "var ${1:target} *${2:ErrorType}",
+      "if errors.As(err, &${1:target}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Branch when err's chain contains a specific error type, binding it."
+  },
+  "err.sentinel": {
+    "prefix": "err.sentinel",
+    "body": [
+      "var Err${1:Name} = errors.New(\"${2:message}\")$0"
+    ],
+    "description": "Package-level sentinel error for errors.Is comparisons."
+  },
+  "defer.close": {
+    "prefix": "defer.close",
+    "body": [
+      "defer ${1:resource}.Close()$0"
+    ],
+    "description": "Defer closing a resource right after the error check."
+  },
+  "for.range": {
+    "prefix": "for.range",
+    "body": [
+      "for ${1:i}, ${2:v} := range ${3:collection} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Range over a slice, map, or channel."
+  }
+}

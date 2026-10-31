@@ -1,0 +1,73 @@
+{
+  "macro.derive": {
+    "prefix": "macro.derive",
+    "body": ["#[derive(Debug, Clone, Copy, PartialEq, Eq)]$0"],
+    "description": "Common derives without serde."
+  },
+  "macro.derive.serde": {
+    "prefix": "macro.derive.serde",
+    "body": ["#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]$0"],
+    "description": "Common derives with serde Serialize/Deserialize."
+  },
+  "opt.unwrap_or": {
+    "prefix": "opt.unwrap_or",
+    "body": ["let ${1:value} = ${2:option}.unwrap_or_else(|| ${3:default});$0"],
+    "description": "Extract Option value or compute a fallback."
+  },
+  "opt.let_else": {
+    "prefix": "opt.let_else",
+    "body": [
+      "let Some(${1:value}) = &${2:option} else {",
+      "\t$0",
+      "\treturn;",
+      "};"
+    ],
+    "description": "let-else on an Option, borrowing the inner value. Early returns if None."
+  },
+  "if.opt.none": {
+    "prefix": "if.opt.none",
+    "body": [
+      "if ${1:option}.is_none() {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Branch when an Option is None."
+  },
+  "if.opt.let": {
+    "prefix": "if.opt.let",
+    "body": [
+      "if let Some(${1:value}) = ${2:option} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "if let Some, moving out of the Option."
+  },
+  "if.opt.some": {
+    "prefix": "if.opt.some",
+    "body": [
+      "if let Some(${1:value}) = &${2:option} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Branch when an Option is Some, binding a reference to the inner value."
+  },
+  "if.res.err": {
+    "prefix": "if.res.err",
+    "body": [
+      "if let Err(${1:e}) = ${2:result} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Branch when a Result is Err."
+  },
+  "trait.async": {
+    "prefix": "trait.async",
+    "body": [
+      "#[async_trait]",
+      "pub trait ${1:TraitName} {",
+      "\tasync fn ${2:method_name}(&self) -> ${3:Result<(), Error>};$0",
+      "}"
+    ],
+    "description": "Async trait definition using the async_trait crate."
+  }
+}

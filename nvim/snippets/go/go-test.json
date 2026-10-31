@@ -1,0 +1,31 @@
+{
+  "test.func": {
+    "prefix": "test.func",
+    "body": [
+      "func Test${1:Name}(t *testing.T) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Standard test function."
+  },
+  "test.table": {
+    "prefix": "test.table",
+    "body": [
+      "func Test${1:Name}(t *testing.T) {",
+      "\ttests := []struct {",
+      "\t\tname string",
+      "\t\t${2:input string}",
+      "\t\t${3:want string}",
+      "\t}{",
+      "\t\t{name: \"${4:case}\"},",
+      "\t}",
+      "\tfor _, tt := range tests {",
+      "\t\tt.Run(tt.name, func(t *testing.T) {",
+      "\t\t\t$0",
+      "\t\t})",
+      "\t}",
+      "}"
+    ],
+    "description": "Table-driven test with subtests."
+  }
+}

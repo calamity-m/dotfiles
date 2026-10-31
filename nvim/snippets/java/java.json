@@ -1,0 +1,102 @@
+{
+  "enum": {
+    "prefix": "enum",
+    "body": [
+      "public enum ${1:EnumName} {",
+      "\t${2:VALUE}$0",
+      "}"
+    ],
+    "description": "Java enum declaration."
+  },
+  "exception.runtime": {
+    "prefix": "exception.runtime",
+    "body": [
+      "public class ${1:ExceptionName} extends RuntimeException {",
+      "\tprivate static final long serialVersionUID = 1L;",
+      "",
+      "\tpublic ${1:ExceptionName}() {",
+      "\t\tsuper();",
+      "\t}",
+      "",
+      "\tpublic ${1:ExceptionName}(String message) {",
+      "\t\tsuper(message);",
+      "\t}",
+      "",
+      "\tpublic ${1:ExceptionName}(String message, Throwable cause) {",
+      "\t\tsuper(message, cause);",
+      "\t}",
+      "",
+      "\tpublic ${1:ExceptionName}(Throwable cause) {",
+      "\t\tsuper(cause);",
+      "\t}",
+      "",
+      "\tprotected ${1:ExceptionName}(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {",
+      "\t\tsuper(message, cause, enableSuppression, writableStackTrace);",
+      "\t}",
+      "}"
+    ],
+    "description": "RuntimeException subclass with standard constructor overloads."
+  },
+  "exception.base": {
+    "prefix": "exception.base",
+    "body": [
+      "public class ${1:ExceptionName} extends Exception {",
+      "\tprivate static final long serialVersionUID = 1L;",
+      "",
+      "\tpublic ${1:ExceptionName}() {",
+      "\t\tsuper();",
+      "\t}",
+      "",
+      "\tpublic ${1:ExceptionName}(String message) {",
+      "\t\tsuper(message);",
+      "\t}",
+      "",
+      "\tpublic ${1:ExceptionName}(String message, Throwable cause) {",
+      "\t\tsuper(message, cause);",
+      "\t}",
+      "",
+      "\tpublic ${1:ExceptionName}(Throwable cause) {",
+      "\t\tsuper(cause);",
+      "\t}",
+      "",
+      "\tprotected ${1:ExceptionName}(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {",
+      "\t\tsuper(message, cause, enableSuppression, writableStackTrace);",
+      "\t}",
+      "}"
+    ],
+    "description": "Checked Exception subclass with standard constructor overloads."
+  },
+  "switch.arrow": {
+    "prefix": "switch.arrow",
+    "body": [
+      "switch (${1:value}) {",
+      "\tcase ${2:LABEL} -> ${3:statement};",
+      "\tdefault -> ${4:defaultStatement};",
+      "}$0"
+    ],
+    "description": "Enhanced Java switch statement using arrow case labels."
+  },
+  "switch.expression": {
+    "prefix": "switch.expression",
+    "body": [
+      "var ${1:result} = switch (${2:value}) {",
+      "\tcase ${3:LABEL} -> ${4:expression};",
+      "\tdefault -> ${5:defaultExpression};",
+      "};$0"
+    ],
+    "description": "Enhanced Java switch expression using arrow case labels."
+  },
+  "switch.complex_expression": {
+    "prefix": "switch.complex_expression",
+    "body": [
+      "var ${1:result} = switch (${2:value}) {",
+      "\tcase ${3:LABEL} -> {",
+      "\t\t${4:// complex logic}",
+      "\t\tyield ${5:expression};",
+      "\t}",
+      "\tdefault -> ${6:defaultExpression};",
+      "};$0"
+    ],
+    "description": "Enhanced Java switch expression with a block case and yield."
+  }
+}

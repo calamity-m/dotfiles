@@ -1,0 +1,15 @@
+{
+  "spring.jpa.repository": {
+    "prefix": "spring.jpa.repository",
+    "body": [
+      "import org.springframework.data.jpa.repository.JpaRepository;",
+      "import org.springframework.stereotype.Repository;",
+      "",
+      "@Repository",
+      "public interface ${1:EntityName}Repository extends JpaRepository<${2:EntityName}, ${3:Long}> {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Spring Data JPA repository interface."
+  }
+}

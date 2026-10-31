@@ -13,6 +13,8 @@ wk.add({
 	{ "<leader>f", group = "Telescope" },
 	{ "<leader>g", group = "Search LSP" },
 	{ "<leader>t", group = "Toggle" },
+	{ "<leader>h", group = "Help" },
+	{ "<leader>hM", group = "Mini" },
 })
 
 -- Multicursors

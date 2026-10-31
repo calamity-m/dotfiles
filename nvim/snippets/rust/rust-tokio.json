@@ -1,0 +1,27 @@
+{
+  "tokio": {
+    "prefix": "tokio",
+    "body": [
+      "#[tokio::main]",
+      "async fn main() -> Result<(), Box<dyn std::error::Error>> {",
+      "\t$0",
+      "\tOk(())",
+      "}"
+    ],
+    "description": "Tokio async main entrypoint."
+  },
+  "tokio.select": {
+    "prefix": "tokio.select",
+    "body": [
+      "tokio::select! {",
+      "\t${1:result} = ${2:future} => {",
+      "\t\t$0",
+      "\t}",
+      "\t${3:result} = ${4:future} => {",
+      "\t\t",
+      "\t}",
+      "}"
+    ],
+    "description": "tokio::select! waiting on multiple async branches."
+  }
+}

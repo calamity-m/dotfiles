@@ -1,0 +1,48 @@
+{
+  "doc.fn": {
+    "prefix": "doc.fn",
+    "body": [
+      "/// ${1:Description.}",
+      "///",
+      "/// # Arguments",
+      "///",
+      "/// * `${2:argument_name}` - ${3:type and description.}",
+      "///",
+      "/// # Returns",
+      "/// ${4:type and description of the returned value.}",
+      "///",
+      "/// # Examples",
+      "/// ```rust",
+      "/// ${5:// example}",
+      "/// ```",
+      "$0"
+    ],
+    "description": "Doc comment for a function: description, arguments, returns, examples."
+  },
+  "doc.crate": {
+    "prefix": "doc.crate",
+    "body": [
+      "//! ${1:Description.}",
+      "//!",
+      "//! # Examples",
+      "//! ```rust",
+      "//! ${2:// example}",
+      "//! ```",
+      "$0"
+    ],
+    "description": "Crate/module-level doc comment."
+  },
+  "doc.test": {
+    "prefix": "doc.test",
+    "body": [
+      "/// ${1:Description.}",
+      "///",
+      "/// # Examples",
+      "/// ```rust",
+      "/// ${2:// example}",
+      "/// ```",
+      "$0"
+    ],
+    "description": "Doc comment for a test function."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "dto.record.outbound": {
+    "prefix": "dto.record.outbound",
+    "body": [
+      "import com.fasterxml.jackson.annotation.JsonInclude;",
+      "import com.fasterxml.jackson.annotation.JsonProperty;",
+      "",
+      "@JsonInclude(JsonInclude.Include.NON_NULL)",
+      "public record ${1:RecordName}(",
+      "\t@JsonProperty(\"${2:fieldName}\") ${3:String} ${4:fieldName}$0",
+      ") {}"
+    ],
+    "description": "Outbound DTO as a Java record with JsonInclude NON_NULL and JsonProperty."
+  },
+  "dto.record.inbound": {
+    "prefix": "dto.record.inbound",
+    "body": [
+      "import com.fasterxml.jackson.annotation.JsonProperty;",
+      "import jakarta.validation.constraints.NotNull;",
+      "",
+      "public record ${1:RecordName}(",
+      "\t@JsonProperty(\"${2:fieldName}\") @NotNull ${3:String} ${4:fieldName}$0",
+      ") {}"
+    ],
+    "description": "Inbound DTO as a Java record with JsonProperty and NotNull validation."
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "doc.class": {
+    "prefix": "doc.class",
+    "body": [
+      "/**",
+      " * ${1:Description.}",
+      " *",
+      " * @author ${2:author}",
+      " */",
+      "$0"
+    ],
+    "description": "Javadoc comment for a class."
+  },
+  "doc.method": {
+    "prefix": "doc.method",
+    "body": [
+      "/**",
+      " * ${1:Description.}",
+      " *",
+      " * @param ${2:parameterName} ${3:description}",
+      " * @return ${4:description}",
+      " */",
+      "$0"
+    ],
+    "description": "Javadoc comment for a method with one parameter and a return value."
+  },
+  "doc.constructor": {
+    "prefix": "doc.constructor",
+    "body": [
+      "/**",
+      " * Creates a new ${1:ClassName}.",
+      " *",
+      " * @param ${2:parameterName} ${3:description}",
+      " */",
+      "$0"
+    ],
+    "description": "Javadoc comment for a constructor."
+  },
+  "doc.record": {
+    "prefix": "doc.record",
+    "body": [
+      "/**",
+      " * ${1:Description.}",
+      " *",
+      " * @param ${2:componentName} ${3:description}",
+      " */",
+      "$0"
+    ],
+    "description": "Javadoc comment for a Java record."
+  },
+  "doc.test": {
+    "prefix": "doc.test",
+    "body": [
+      "/**",
+      " * ${1:Description.}",
+      " *",
+      " * @throws ${2:Exception} ${3:when the test setup fails}",
+      " */",
+      "$0"
+    ],
+    "description": "Javadoc comment for a Java test method."
+  }
+}
