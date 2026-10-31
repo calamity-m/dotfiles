@@ -3,6 +3,8 @@ tags: [desktop, icons]
 description: Desktop entry and icon helpers
 ---
 
+# Desktop
+
 ## cd to desktop entries
 
 ```bash

@@ -24,6 +24,8 @@ variables:
     command: zellij list-sessions --short --no-formatting
 ---
 
+# Zellij
+
 ## start named sessions
 
 ```bash

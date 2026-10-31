@@ -6,6 +6,8 @@ variables:
     command: find "$PWD" -maxdepth 1 -type f -name '*.AppImage'
 ---
 
+# AppImage
+
 ## Install an AppImage
 
 Install an AppImage by addiong an AppImage to the application launcher (for example, `vicinae.desktop`). Use a filename without the `.desktop` suffix for `app_id`, an absolute AppImage path, and an icon theme name or absolute icon path for `icon`. Desktop entries do not expand `~` or `$HOME` in paths. Re-running this replaces the entry with the same ID.
