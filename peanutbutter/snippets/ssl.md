@@ -10,10 +10,14 @@ variables:
     command: rg --files -g '*.p12' -g '*.pfx'
   jks:
     command: rg --files -g '*.jks'
+  key:
+    command: rg --files -g '*.key' -g '*.pem'
   out_crt:
-    default: client.crt
+    default_value: client.crt
   out_key:
-    default: client.key
+    default_value: client.key
+  out_csr:
+    default_value: client.csr
   bits:
     suggestions:
       - 4096
@@ -32,6 +36,18 @@ openssl x509 -in <@cert> -noout -text
 
 ```bash
 openssl pkcs12 -in <@p12> -nokeys -info
+```
+
+## Inspect JKS keystore
+
+```bash
+keytool -list -v -keystore <@jks>
+```
+
+## Inspect JKS single alias
+
+```bash
+keytool -list -v -keystore <@jks> -alias <@alias>
 ```
 
 ## Extract cert from p12
@@ -78,26 +94,44 @@ openssl pkcs12 -legacy -in <@p12> -info -noout
 
 ## Change passphrase on p12
 
+Goes via a temp PEM because `-export` can't read both key and cert from a pipe.
+
 ```bash
-openssl pkcs12 -in <@p12> -nodes | openssl pkcs12 -export -out <@out_p12>
+pem=$(mktemp) && openssl pkcs12 -in <@p12> -nodes -out "$pem" && openssl pkcs12 -export -in "$pem" -out <@out_p12>; rm -f "$pem"
+```
+
+## Strip passphrase from p12
+
+Re-export with no encryption and an empty password.
+
+```bash
+pem=$(mktemp) && openssl pkcs12 -in <@p12> -nodes -out "$pem" && openssl pkcs12 -export -in "$pem" -keypbe NONE -certpbe NONE -passout pass: -out <@out_p12>; rm -f "$pem"
+```
+
+## Strip passphrase from p12 (legacy)
+
+```bash
+pem=$(mktemp) && openssl pkcs12 -legacy -in <@p12> -nodes -out "$pem" && openssl pkcs12 -export -in "$pem" -keypbe NONE -certpbe NONE -passout pass: -out <@out_p12>; rm -f "$pem"
+```
+
+## Create CSR with new key
+
+Generates an unencrypted RSA key alongside the CSR.
+
+```bash
+openssl req -new -newkey rsa:<@bits> -nodes -keyout <@out_key> -out <@out_csr> -subj "/CN=<@cn>"
+```
+
+## Create CSR from existing key
+
+```bash
+openssl req -new -key <@key> -out <@out_csr> -subj "/CN=<@cn>"
 ```
 
 ## Create RSA private key
 
 ```bash
 openssl genrsa -out <@out_key> <@bits>
-```
-
-## Inspect JKS keystore
-
-```bash
-keytool -list -v -keystore <@jks>
-```
-
-## Inspect JKS single alias
-
-```bash
-keytool -list -v -keystore <@jks> -alias <@alias>
 ```
 
 ## Import cert into JKS keystore
