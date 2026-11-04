@@ -3,12 +3,19 @@ local map = vim.keymap.set
 -- Cycle through buffers in normal mode (Shift-Tab is named <S-Tab>).
 map("n", "<S-Tab>", "<cmd>bnext<CR>", { desc = "Next buffer" })
 map("n", "<C-Tab>", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
+-- Include old cycling for memory, lol
+map("n", "<S-h>", "<cmd>bprevious<CR>", { desc = "Previous Buffer" })
+map("n", "<S-l>", "<cmd>bnext<CR>", { desc = "Next Buffer" })
 
 -- Window navigation
 map("n", "<C-h>", "<C-w>h", { desc = "Window Left" })
 map("n", "<C-j>", "<C-w>j", { desc = "Window Down" })
 map("n", "<C-k>", "<C-w>k", { desc = "Window Up" })
 map("n", "<C-l>", "<C-w>l", { desc = "Window Right" })
+map("n", "<C-Left>", "<C-w>h", { desc = "Window Left" })
+map("n", "<C-Down>", "<C-w>j", { desc = "Window Down" })
+map("n", "<C-Up>", "<C-w>k", { desc = "Window Up" })
+map("n", "<C-Right>", "<C-w>l", { desc = "Window Right" })
 
 -- Buffer management
 map("n", "<leader>bdd", "<cmd>bdelete<CR>", { desc = "Delete Buffer" })
