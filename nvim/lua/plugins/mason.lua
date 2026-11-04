@@ -68,6 +68,7 @@ local tools = {
 	"debugpy",
 	"codelldb",
 	"java-debug-adapter",
+	"js-debug-adapter",
 }
 
 local registry = require("mason-registry")
