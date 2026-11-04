@@ -1,0 +1,16 @@
+{
+  // Personal debug configs, available in every project.
+  // Linked to ~/.vscode/launch.json by mise (see mise.toml).
+  // Project and nested .vscode/launch.json files override configs with the same name.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      // Pick any executable under the cwd (e.g. target/debug/<bin>, including cargo workspace members)
+      "name": "Pick executable (codelldb)",
+      "type": "codelldb",
+      "request": "launch",
+      "program": "${command:pickFile}",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
