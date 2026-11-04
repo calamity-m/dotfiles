@@ -16,14 +16,11 @@ vim.pack.add({
 	{ src = "https://github.com/mfussenegger/nvim-dap" },
 	{ src = "https://github.com/igorlfs/nvim-dap-view" },
 	-- DAP Language Support
-
 	{ src = "https://github.com/leoluz/nvim-dap-go" },
 	{ src = "https://github.com/mfussenegger/nvim-dap-python" },
-
 	-- Editor plugins
 	{ src = "https://github.com/nvim-telescope/telescope.nvim" },
 	{ src = "https://github.com/nvim-telescope/telescope-ui-select.nvim" },
-
 	-- Trial plugins
 	{ src = "https://github.com/tris203/precognition.nvim" },
 })
@@ -37,6 +34,8 @@ local plugin_modules = {
 	"plugins.lspconfig",
 	"plugins.conform",
 	"plugins.precognition",
+	"plugins.nvim_dap",
+	"plugins.nvim_dap_view",
 }
 
 for _, module in ipairs(plugin_modules) do

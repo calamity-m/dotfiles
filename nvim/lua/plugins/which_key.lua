@@ -15,6 +15,7 @@ wk.add({
 	{ "<leader>t", group = "Toggle" },
 	{ "<leader>h", group = "Help" },
 	{ "<leader>hM", group = "Mini" },
+	{ "<leader>d", group = "DAP" },
 })
 
 -- Multicursors
