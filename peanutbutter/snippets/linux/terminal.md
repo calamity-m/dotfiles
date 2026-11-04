@@ -19,3 +19,15 @@ tags:
 ```bash
 <@command> 2>&1 | tee <@file>
 ```
+
+## append to existing file
+
+```bash
+<@command> >> <@file>
+```
+
+## overwrite an existing file (or create a new one)
+
+```bash
+<@command> > <@file>
+```
