@@ -1,0 +1,7 @@
+# User templates, loaded by noctalia alongside config.toml (~/.config/noctalia/*.toml)
+
+# Zellij theme, based on the community template. Legacy zellij themes use `bg`
+# as the selection background, so it can't be the terminal background.
+[theme.templates.user.zellij]
+input_path  = "$XDG_CONFIG_HOME/noctalia/templates/zellij.kdl"
+output_path = "$XDG_CONFIG_HOME/zellij/themes/noctalia.kdl"

@@ -6,6 +6,8 @@
 "~/.config/zellij" = { source = "zellij" }
 "~/.config/nvim" = { source = "nvim" }
 "~/.config/niri/overrides.kdl" = { source = "niri/overrides.kdl" }
+"~/.config/noctalia/templates.toml" = { source = "noctalia/templates.toml" }
+"~/.config/noctalia/templates" = { source = "noctalia/templates" }
 "~/.agents/skills" = { source = "agents/skills" }
 "~/.claude/skills" = { source = "agents/skills" }
 
