@@ -138,7 +138,7 @@ git worktree list --verbose
 ## create worktree for branch
 
 ```bash
-git worktree add "<@path:?../repo-worktree>" "<@branch>' --sort=-committerdate>"
+git worktree add "<@path:?../repo-worktree>" "<@branch:git branch --format='%(refname:short)' --sort=-committerdate>"
 ```
 
 ## move to worktree location
