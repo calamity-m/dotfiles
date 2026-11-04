@@ -5,6 +5,7 @@
 "~/.config/peanutbutter" = { source = "peanutbutter" }
 "~/.config/zellij" = { source = "zellij" }
 "~/.config/nvim" = { source = "nvim" }
+"~/.vscode/launch.json" = { source = "vscode/launch.json" }
 "~/.config/niri/overrides.kdl" = { source = "niri/overrides.kdl" }
 "~/.config/noctalia/templates.toml" = { source = "noctalia/templates.toml" }
 "~/.config/noctalia/templates" = { source = "noctalia/templates" }
