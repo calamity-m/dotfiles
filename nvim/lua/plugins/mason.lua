@@ -53,14 +53,21 @@ require("mason-lspconfig").setup({
 
 -- Install mason packages that aren't LSP
 local tools = {
-	"golangci-lint",
-	"goimports",
-	"java-debug-adapter",
-	"java-test",
-	"xmlformatter",
-	"shellcheck",
+	-- Formatters
 	"oxfmt",
+	"goimports",
+	"xmlformatter",
 	"prettier",
+	-- Linters
+	"shellcheck",
+	"golangci-lint",
+	-- Language Support
+	"java-test",
+	-- Debuggers
+	"delve",
+	"debugpy",
+	"codelldb",
+	"java-debug-adapter",
 }
 
 local registry = require("mason-registry")

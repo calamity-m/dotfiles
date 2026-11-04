@@ -12,6 +12,13 @@ vim.pack.add({
 	{ src = "https://github.com/mason-org/mason-lspconfig.nvim" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/stevearc/conform.nvim" },
+	-- DAP Core
+	{ src = "https://github.com/mfussenegger/nvim-dap" },
+	{ src = "https://github.com/igorlfs/nvim-dap-view" },
+	-- DAP Language Support
+
+	{ src = "https://github.com/leoluz/nvim-dap-go" },
+	{ src = "https://github.com/mfussenegger/nvim-dap-python" },
 
 	-- Editor plugins
 	{ src = "https://github.com/nvim-telescope/telescope.nvim" },
