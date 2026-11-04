@@ -9,8 +9,6 @@ variables:
     command: rg --files -g '*.pem' -g '*.key'
   p12:
     command: rg --files -g '*.p12' -g '*.pfx'
-  output_file:
-    default: output.txt
   json_file:
     command:
   method:
@@ -71,6 +69,16 @@ curl -X <@method> \
   -H 'Content-Type: application/json' \
   --data-binary @<@json_file:rg --files -g '*.json'> \
   '<@url>'
+```
+
+## save curl output as file
+
+Saves the output of the curl to given url to the provided file.
+
+Swap for -O ..., e.g. curl -O https://.. to save it with the original/default filename.
+
+```bash
+curl --create-dirs -o <@output_file> <@url>
 ```
 
 ## test sse endpoint
