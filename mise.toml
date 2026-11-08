@@ -11,6 +11,7 @@
 "~/.config/noctalia/templates" = { source = "noctalia/templates" }
 "~/.agents/skills" = { source = "agents/skills" }
 "~/.claude/skills" = { source = "agents/skills" }
+"~/.pi/agent/extensions" = { source = "pi/extensions" }
 
 [bootstrap.hooks]
 post-dotfiles = 'bash "$HOME/.scripts/bashrc.d.sh"'
@@ -24,6 +25,7 @@ codex = "latest"
 fzf = "latest"
 gh = "latest"
 "github:calamity-m/peanutbutter" = "latest"
+"github:unkn0wn-root/resterm" = "latest"
 go = "latest"
 gradle = "latest"
 helm = "latest"
@@ -41,4 +43,4 @@ zellij = "latest"
 zoxide = "latest"
 
 [settings]
-idiomatic_version_file_enable_tools = ["node", "go"]
+idiomatic_version_file_enable_tools = ["node"]
