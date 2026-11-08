@@ -16,9 +16,9 @@ vim.keymap.set("i", "<CR>", "v:lua.cr_action()", { expr = true })
 local MiniCompletion = require("mini.completion")
 MiniCompletion.setup()
 
--- Setup Tab/Shift Tab use in the autocomplete popup
+-- Tab selects the next completion; Shift-Tab is reserved for snippet tabstops.
+-- Use Ctrl-P for the previous completion.
 local imap_expr = function(lhs, rhs)
 	vim.keymap.set("i", lhs, rhs, { expr = true })
 end
 imap_expr("<Tab>", [[pumvisible() ? "\<C-n>" : "\<Tab>"]])
-imap_expr("<S-Tab>", [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]])

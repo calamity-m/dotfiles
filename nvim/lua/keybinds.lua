@@ -1,9 +1,6 @@
 local map = vim.keymap.set
 
--- Cycle through buffers in normal mode (Shift-Tab is named <S-Tab>).
-map("n", "<S-Tab>", "<cmd>bnext<CR>", { desc = "Next buffer" })
-map("n", "<C-Tab>", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
--- Include old cycling for memory, lol
+-- Cycle through buffers
 map("n", "<S-h>", "<cmd>bprevious<CR>", { desc = "Previous Buffer" })
 map("n", "<S-l>", "<cmd>bnext<CR>", { desc = "Next Buffer" })
 
