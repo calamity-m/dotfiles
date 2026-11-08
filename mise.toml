@@ -12,6 +12,7 @@
 "~/.agents/skills" = { source = "agents/skills" }
 "~/.claude/skills" = { source = "agents/skills" }
 "~/.pi/agent/extensions" = { source = "pi/extensions" }
+"~/.pi/agent/prompts" = { source = "agents/prompts" }
 
 [bootstrap.hooks]
 post-dotfiles = 'bash "$HOME/.scripts/bashrc.d.sh"'
