@@ -9,6 +9,7 @@
 "~/.config/niri/overrides.kdl" = { source = "niri/overrides.kdl" }
 "~/.config/noctalia/templates.toml" = { source = "noctalia/templates.toml" }
 "~/.config/noctalia/templates" = { source = "noctalia/templates" }
+"~/.config/noctalia/palettes" = { source = "noctalia/palettes" }
 "~/.agents/skills" = { source = "agents/skills" }
 "~/.claude/skills" = { source = "agents/skills" }
 "~/.pi/agent/extensions" = { source = "pi/extensions" }
