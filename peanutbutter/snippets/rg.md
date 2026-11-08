@@ -7,15 +7,15 @@ tags:
   - directories
 ---
 
-# Ripgrep
+# rg
 
-## Find files with a specific file type
+## find files with a specific file type
 
 ```bash
 rg --files -g '*.<@extension>'
 ```
 
-## Find files matching multiple globs
+## find files matching multiple globs
 
 Each `-g` includes files matching that path glob.
 
@@ -23,19 +23,19 @@ Each `-g` includes files matching that path glob.
 rg --files -g '<@glob>' -g '<@glob_two>'
 ```
 
-## List files in a directory that match a pattern
+## list files in a directory that match a pattern
 
 ```bash
 rg --files <@directory> | rg <@pattern>
 ```
 
-## List files in a directory that do not match a pattern
+## list files in a directory that do not match a pattern
 
 ```bash
 rg --files <@directory> | rg -v <@pattern>
 ```
 
-## List filenames whose contents match a pattern
+## list filenames whose contents match a pattern
 
 Searches file contents from the current directory down and prints only the
 matching file paths, one per line.
@@ -47,7 +47,7 @@ matching file paths, one per line.
 rg -l <@pattern>
 ```
 
-## List filenames whose contents match a pattern, limited to a file type
+## list filenames whose contents match a pattern, limited to a file type
 
 `rg --type-list` shows the available type names.
 
@@ -55,7 +55,7 @@ rg -l <@pattern>
 rg -l -t <@type:rg --type-list | cut -d: -f1> <@pattern>
 ```
 
-## List filenames whose contents match a pattern, limited to a glob
+## list filenames whose contents match a pattern, limited to a glob
 
 The glob and the pattern match different things:
 
@@ -70,7 +70,7 @@ So `-g "*.go" "func main"` means "of the `.go` files, which contain `func main`"
 rg -l -g "<@glob>" <@pattern>
 ```
 
-## Count matches per file
+## count matches per file
 
 Prints `path:count` for each file containing the pattern, skipping files with
 zero matches.
@@ -79,7 +79,7 @@ zero matches.
 rg -c <@pattern>
 ```
 
-## Count unique matches across files
+## count unique matches across files
 
 Print only the text matched by the regex, combine matches from all files, and
 show each unique value with its total count, most frequent first. Make the
@@ -90,7 +90,7 @@ PCRE2 mode (`-P`) allows `\K` to exclude the field name from each match.
 rg -P --no-filename -o '<@pattern>' '<@directory:.>' | sort | uniq -c | sort -nr
 ```
 
-## Count unique bucket matches across files
+## count unique bucket matches across files
 
 Group non-empty text between start and end regexes on the same line, then
 show each bucket with its total count, most frequent first. Delimiters are

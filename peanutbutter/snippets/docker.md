@@ -3,6 +3,7 @@ name: docker
 tags:
   - docker
   - containers
+  - devops
 description: Docker commands and snippets
 variables:
   container:

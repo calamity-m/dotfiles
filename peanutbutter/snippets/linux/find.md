@@ -10,7 +10,7 @@ variables:
     default: .
 ---
 
-# Find Snippets
+# Find
 
 ## find files and directories with total sizes
 

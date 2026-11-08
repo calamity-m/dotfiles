@@ -5,7 +5,7 @@ tags:
   - terminal
 ---
 
-# Sed Snippets
+# Sed
 
 ## Replace pattern in file
 

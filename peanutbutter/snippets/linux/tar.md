@@ -15,21 +15,21 @@ variables:
     command: rg --files -g '*.tar' -g '*.tar.gz'
 ---
 
-# Tar Snippets
+# Tar
 
-## Create tar
+## create tar
 
 ```bash
 tar -czvf <@out>.tar.gz <@src:rg . --files>
 ```
 
-## Create tar from directory using relative paths
+## create tar from directory using relative paths
 
 ```bash
 tar czf <@out>.tar.gz -C <@directory> .
 ```
 
-## View files in tar
+## view files in tar
 
 List files inside a tar archive without extracting it.
 
@@ -37,7 +37,7 @@ List files inside a tar archive without extracting it.
 tar -tf <@tar>
 ```
 
-## Extract files matching a regex
+## extract files matching a regex
 
 Match the regex against each file's full path inside the archive, then extract
 matching files into the destination directory.
@@ -46,19 +46,19 @@ matching files into the destination directory.
 tar -tf <@tar> | rg <@regex> | tar -xvf <@tar> -C <@dest> --verbatim-files-from -T -
 ```
 
-## Untar into directory
+## untar into directory
 
 ```bash
 tar -xzvf <@tar> -C <@dest>
 ```
 
-## Untar specific file
+## untar specific file
 
 ```bash
 tar -xzvf <@tar> <@file>
 ```
 
-## Untar, strip prefix
+## untar, strip prefix
 
 ```bash
 tar -xzvf <@tar> -C <@dest> --strip-components=<@depth>
