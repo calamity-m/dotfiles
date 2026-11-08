@@ -60,6 +60,17 @@ vim.lsp.config("rust_analyzer", {
 	},
 })
 vim.lsp.enable("rust_analyzer")
+-- Rust needs some shorthand commands for build etc.
+vim.api.nvim_create_autocmd("FileType", {
+	group = vim.api.nvim_create_augroup("rust_keymaps", { clear = true }),
+	pattern = "rust",
+	callback = function(event)
+		vim.keymap.set("n", "<leader>cb", "<cmd>!cargo build --all-targets<CR>", {
+			buffer = event.buf,
+			desc = "Cargo Build",
+		})
+	end,
+})
 
 -- Python
 vim.lsp.config("ty", {
