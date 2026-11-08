@@ -8,6 +8,8 @@ tags:
 variables:
   path:
     default: .
+  size:
+    suggestions: [1k, 10k, 100k, 1M, 10M, 100M, 1G, 10G]
 ---
 
 # Find
@@ -29,8 +31,26 @@ smallest to largest.
 find <@path> -mindepth 1 -maxdepth 1 -type d -exec du -sh -- {} + | sort -h
 ```
 
-## Find directories and files with a maxdepth
+## find directories and files with a maxdepth
 
 ```bash
-find <@start> -maxdepth <@depth:?1>
+find <@path> -maxdepth <@depth:?1>
+```
+
+## find files with a size greater than
+
+Pick a size or type your own: `k` = KiB, `M` = MiB, `G` = GiB, `c` = bytes.
+GNU `find` rounds file sizes up to the selected unit before comparing.
+
+```bash
+find <@path> -type f -size +<@size>
+```
+
+## find files with a size less than
+
+Pick a size or type your own: `k` = KiB, `M` = MiB, `G` = GiB, `c` = bytes.
+GNU `find` rounds file sizes up to the selected unit before comparing.
+
+```bash
+find <@path> -type f -size -<@size>
 ```
