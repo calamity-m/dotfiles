@@ -16,6 +16,15 @@ vim.keymap.set("i", "<CR>", "v:lua.cr_action()", { expr = true })
 local MiniCompletion = require("mini.completion")
 MiniCompletion.setup()
 
+-- mini.completion only knows to skip Telescope's prompt. Skip fff's search
+-- input too, otherwise it offers buffer words while you type a query.
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "fff_input",
+	callback = function(args)
+		vim.b[args.buf].minicompletion_disable = true
+	end,
+})
+
 -- Tab selects the next completion; Shift-Tab is reserved for snippet tabstops.
 -- Use Ctrl-P for the previous completion.
 local imap_expr = function(lhs, rhs)
