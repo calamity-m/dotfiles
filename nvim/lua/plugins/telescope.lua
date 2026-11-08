@@ -46,16 +46,6 @@ local function is_hidden(path)
 	return ("/" .. path):find("/%.") ~= nil
 end
 
-local function find_files_with_hidden()
-	find_files({
-		file_ignore_patterns = { "^%.git/" },
-	}, function(path)
-		if is_hidden(path) then
-			return "Comment"
-		end
-	end)
-end
-
 local function find_files_with_ignored()
 	local ignored = {}
 	-- Query Git once per picker; NUL separators preserve unusual filenames.
@@ -96,13 +86,11 @@ local function find_files_with_ignored()
 	end)
 end
 
--- Keymaps
+-- Keymaps (<leader>ff and <leader>fg are handled by fff, see plugins/fff.lua)
 local map = vim.keymap.set
 
-map("n", "<leader>ff", find_files_with_hidden, { desc = "Telescope find files" })
 map("n", "<leader>fF", find_files_with_ignored, { desc = "Telescope find all files" })
 map("n", "<leader>F", builtin.find_files, { desc = "Telescope find files" })
-map("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
 map("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
 map("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 

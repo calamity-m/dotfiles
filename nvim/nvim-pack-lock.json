@@ -8,6 +8,10 @@
       "rev": "016802de402556da54c36bd7359b441266b01cdd",
       "src": "https://github.com/stevearc/conform.nvim"
     },
+    "fff": {
+      "rev": "5d21e4bbdf33a09f58975636208e30747bc8d918",
+      "src": "https://github.com/dmtrKovalenko/fff"
+    },
     "mason-lspconfig.nvim": {
       "rev": "c302d3fcaf4727ee7d48b20e7c293668ed1f6d98",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"

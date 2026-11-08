@@ -1,3 +1,17 @@
+-- Build hooks must be registered before vim.pack.add so they fire on first install.
+vim.api.nvim_create_autocmd("PackChanged", {
+	callback = function(ev)
+		local name, kind = ev.data.spec.name, ev.data.kind
+		if name == "fff" and (kind == "install" or kind == "update") then
+			if not ev.data.active then
+				vim.cmd.packadd("fff")
+			end
+			-- Downloads a prebuilt binary, or falls back to cargo build
+			require("fff.download").download_or_build_binary()
+		end
+	end,
+})
+
 vim.pack.add({
 	-- Core plugins
 	{ src = "https://github.com/folke/which-key.nvim" },
@@ -23,6 +37,7 @@ vim.pack.add({
 	-- Editor plugins
 	{ src = "https://github.com/nvim-telescope/telescope.nvim" },
 	{ src = "https://github.com/nvim-telescope/telescope-ui-select.nvim" },
+	{ src = "https://github.com/dmtrKovalenko/fff" },
 	{ src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" },
 	-- Trial plugins
 	{ src = "https://github.com/tris203/precognition.nvim" },
@@ -33,6 +48,7 @@ local plugin_modules = {
 	"plugins.mini",
 	"plugins.treesitter",
 	"plugins.telescope",
+	"plugins.fff",
 	"plugins.mason",
 	"plugins.lspconfig",
 	"plugins.tiny_inline_diagnostic",
