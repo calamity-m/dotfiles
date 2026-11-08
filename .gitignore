@@ -21,8 +21,9 @@ nvim.log
 # Coding agents
 *session*.md
 
-# Claude Code's synced claude.ai skills (lands here via ~/.claude/skills link)
-/agents/skills/synced/
+# Agents
+.pi
+.claude
 
 # Wallpaper-generated Zellij theme
 /zellij/themes/noctalia.kdl
