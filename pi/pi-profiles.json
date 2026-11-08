@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "active": "experimental",
+  "profiles": {
+    "default": {
+      "disabled": [
+        "~/.pi/agent/git/github.com/NVlabs/SoL-Pi/src/sol-pi/index.ts",
+        "~/.pi/agent/git/github.com/championswimmer/pi-context-usage/src/index.ts",
+        "~/.pi/agent/git/github.com/championswimmer/pi-cache-graph/index.ts"
+      ]
+    },
+    "yolo": {
+      "disabled": [
+        "~/.pi/agent/git/github.com/calamity-m/pi-bwubblewap/extensions/index.ts"
+      ]
+    },
+    "experimental": {
+      "disabled": []
+    }
+  }
+}

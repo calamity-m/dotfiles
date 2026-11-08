@@ -12,6 +12,9 @@
 "~/.agents/skills" = { source = "agents/skills" }
 "~/.claude/skills" = { source = "agents/skills" }
 "~/.pi/agent/extensions" = { source = "pi/extensions" }
+"~/.pi/agent/autoformatter.json" = { source = "pi/autoformatter.json" }
+"~/.pi/agent/sol-pi.json" = { source = "pi/sol-pi.json" }
+"~/.pi/agent/pi-profiles.json" = { source = "pi/pi-profiles.json" }
 "~/.pi/agent/prompts" = { source = "agents/prompts" }
 
 [bootstrap.hooks]

@@ -1,0 +1,18 @@
+{
+  "formatters": [
+    {
+      "id": "rustfmt",
+      "languages": ["rust"],
+      "extensions": [".rs"],
+      "command": "rustfmt",
+      "args": ["{file}"]
+    },
+    {
+      "id": "gofmt",
+      "languages": ["go"],
+      "extensions": [".go"],
+      "command": "gofmt",
+      "args": ["-w", "{file}"]
+    }
+  ]
+}
