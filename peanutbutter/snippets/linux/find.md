@@ -28,3 +28,9 @@ smallest to largest.
 ```bash
 find <@path> -mindepth 1 -maxdepth 1 -type d -exec du -sh -- {} + | sort -h
 ```
+
+## Find directories and files with a maxdepth
+
+```bash
+find <@start> -maxdepth <@depth:?1>
+```
