@@ -155,6 +155,10 @@ keybinds clear-defaults=true {
         }
     }
     shared_among "normal" "locked" {
+        bind "Alt h" "Alt left" { MoveFocusOrTab "left"; }
+        bind "Alt j" "Alt down" { MoveFocus "down"; }
+        bind "Alt k" "Alt up" { MoveFocus "up"; }
+        bind "Alt l" "Alt right" { MoveFocusOrTab "right"; }
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
         bind "Alt g" {
