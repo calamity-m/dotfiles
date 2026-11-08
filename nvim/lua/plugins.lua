@@ -23,6 +23,7 @@ vim.pack.add({
 	-- Editor plugins
 	{ src = "https://github.com/nvim-telescope/telescope.nvim" },
 	{ src = "https://github.com/nvim-telescope/telescope-ui-select.nvim" },
+	{ src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" },
 	-- Trial plugins
 	{ src = "https://github.com/tris203/precognition.nvim" },
 })
@@ -34,6 +35,7 @@ local plugin_modules = {
 	"plugins.telescope",
 	"plugins.mason",
 	"plugins.lspconfig",
+	"plugins.tiny_inline_diagnostic",
 	"plugins.conform",
 	"plugins.precognition",
 	"plugins.nvim_dap",
