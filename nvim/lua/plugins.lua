@@ -18,6 +18,8 @@ vim.pack.add({
 	-- DAP Language Support
 	{ src = "https://github.com/leoluz/nvim-dap-go" },
 	{ src = "https://github.com/mfussenegger/nvim-dap-python" },
+	-- Good ol' java
+	{ src = "https://github.com/mfussenegger/nvim-jdtls" },
 	-- Editor plugins
 	{ src = "https://github.com/nvim-telescope/telescope.nvim" },
 	{ src = "https://github.com/nvim-telescope/telescope-ui-select.nvim" },
@@ -36,6 +38,7 @@ local plugin_modules = {
 	"plugins.precognition",
 	"plugins.nvim_dap",
 	"plugins.nvim_dap_view",
+	"plugins.nvim_jdtls",
 }
 
 for _, module in ipairs(plugin_modules) do

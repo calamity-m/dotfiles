@@ -1,0 +1,3 @@
+-- Java DAP is configured in plugins.nvim_jdtls rather than here: the debug and
+-- test adapters are JDTLS extension bundles, so their setup belongs alongside
+-- JDTLS startup, with DAP registration performed after the server attaches.
