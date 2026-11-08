@@ -33,5 +33,6 @@ require("plugins.nvim_dap.launch_json")
 
 -- Languages
 require("plugins.nvim_dap.go")
+require("plugins.nvim_dap.js")
 require("plugins.nvim_dap.python")
 require("plugins.nvim_dap.rust")

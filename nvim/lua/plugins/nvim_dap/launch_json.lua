@@ -21,7 +21,10 @@ local vscode = require("dap.ext.vscode")
 local adapter_filetype_mappings = {
 	debugpy = { "python" },
 	codelldb = { "rust", "c", "cpp" },
-	["pwa-node"] = { "javascript", "typescript" },
+	["pwa-node"] = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+	["pwa-chrome"] = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+	node = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+	chrome = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
 }
 
 -- Read one launch.json, returning {} if it is missing or invalid
