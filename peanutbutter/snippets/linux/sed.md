@@ -2,6 +2,7 @@
 tags:
   - sed
   - cli
+  - terminal
 ---
 
 # Sed Snippets

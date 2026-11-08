@@ -4,6 +4,7 @@ tags:
   - cli
   - gzip
   - files
+  - terminal
 variables:
   depth:
     suggestions:
