@@ -3,6 +3,8 @@ local map = vim.keymap.set
 -- Cycle through buffers
 map("n", "<S-h>", "<cmd>bprevious<CR>", { desc = "Previous Buffer" })
 map("n", "<S-l>", "<cmd>bnext<CR>", { desc = "Next Buffer" })
+map("n", "<S-Tab>", "<cmd>bprevious<CR>", { desc = "Previous Buffer" })
+map("n", "<C-Tab>", "<cmd>bnext<CR>", { desc = "Next Buffer" })
 
 -- Window navigation
 map("n", "<C-h>", "<C-w>h", { desc = "Window Left" })
