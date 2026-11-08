@@ -58,6 +58,7 @@ local tools = {
 	"goimports",
 	"xmlformatter",
 	"prettier",
+	"palantir-java-format",
 	-- Linters
 	"shellcheck",
 	"golangci-lint",

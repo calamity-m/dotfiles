@@ -4,6 +4,7 @@ local conform = require("conform")
 conform.setup({
 	formatters_by_ft = {
 		lua = { "stylua" }, -- Lua formatter
+		java = { "palantir-java-format" }, -- four-space Java formatter
 		go = { "goimports", "gofmt" }, -- imports first, then format
 		python = { "ruff_organize_imports", "ruff_format" }, -- imports first, then format
 		rust = { "rustfmt" }, -- Rust formatter
