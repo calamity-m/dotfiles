@@ -6,6 +6,9 @@ Keep custom Pi extensions here. `mise dot apply` symlinks this directory to
 ## Extensions
 
 - `session-resets.ts`: `/clear` and `/clean` start a new session, like `/new`.
+- `claude-skill-compatibility.ts`: loads skills from `.claude/skills/` relative to
+  Pi's working directory in trusted projects. Missing directories are skipped.
+  Skills are discovered at startup and on `/reload`.
 
 ## Adding extensions
 
