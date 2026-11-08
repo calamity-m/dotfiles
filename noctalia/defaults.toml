@@ -1,0 +1,6 @@
+# Tracked defaults, loaded with every other ~/.config/noctalia/*.toml.
+# ~/.local/state/noctalia/settings.toml (written by the Settings GUI) is applied
+# afterwards, so any key the GUI has saved there wins over this file.
+
+[theme]
+pure_black_dark = true

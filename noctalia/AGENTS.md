@@ -5,9 +5,28 @@ This directory holds user config for the Noctalia shell (installed version 5.4.1
 
 - `templates.toml` and `templates/`: user templates (e.g. the Zellij theme).
 - `palettes/`: custom colour palettes (e.g. `Umber.json`).
+- `defaults.toml`: tracked shell settings (e.g. `[theme] pure_black_dark`).
 
 The shell's own settings live in `~/.local/state/noctalia/settings.toml`, which the
 GUI writes. That file isn't tracked here.
+
+## Config precedence
+
+Noctalia merges config in this order (from `noctalia config --help`):
+
+1. Every `*.toml` in `~/.config/noctalia/` (`config.toml`, `templates.toml`,
+   `defaults.toml`, ...).
+2. `~/.local/state/noctalia/settings.toml`, the GUI's file, applied last.
+
+So the GUI wins. A key in `defaults.toml` only takes effect while `settings.toml`
+doesn't set it. Changing that option in the Settings GUI writes it to
+`settings.toml`, which then silently overrides the tracked value. To go back to
+the tracked value, delete that key from `settings.toml`. That's why the file is
+called `defaults.toml` and not `overrides.toml`.
+
+- `noctalia config export full` prints the effective merged config.
+- `noctalia config validate` checks the merged config, or a single file if given a
+  path.
 
 ## Custom palettes
 
