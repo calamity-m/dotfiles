@@ -83,3 +83,12 @@ zellij delete-all-sessions
 ```bash
 zellij kill-all-sessions
 ```
+
+## kill and delete all sessions
+
+Kill all running Zellij sessions and delete all saved sessions without confirmation.
+This includes the current session and stops its running programs; deleted sessions cannot be resurrected.
+
+```bash
+zellij delete-all-sessions --force --yes
+```
