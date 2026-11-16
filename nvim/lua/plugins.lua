@@ -16,6 +16,7 @@ vim.pack.add({
 	-- Core plugins
 	{ src = "https://github.com/folke/which-key.nvim" },
 	{ src = "https://github.com/nvim-lua/plenary.nvim" },
+	{ src = "https://github.com/saghen/blink.lib" },
 	-- Base16 theme support for the Noctalia/Matugen template
 	{ src = "https://github.com/RRethy/base16-nvim" },
 	-- Mini plugin pack
@@ -26,6 +27,8 @@ vim.pack.add({
 	{ src = "https://github.com/mason-org/mason-lspconfig.nvim" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/stevearc/conform.nvim" },
+	{ src = "https://github.com/saghen/blink.cmp" },
+	{ src = "https://github.com/saghen/blink.pairs" },
 	-- DAP Core
 	{ src = "https://github.com/mfussenegger/nvim-dap" },
 	{ src = "https://github.com/igorlfs/nvim-dap-view" },
@@ -46,6 +49,8 @@ vim.pack.add({
 local plugin_modules = {
 	"plugins.which_key",
 	"plugins.mini",
+	"plugins.blink_cmp",
+	"plugins.blink_pairs",
 	"plugins.treesitter",
 	"plugins.telescope",
 	"plugins.fff",
