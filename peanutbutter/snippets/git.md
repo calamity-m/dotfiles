@@ -12,6 +12,8 @@ variables:
       - docs
       - refactor
       - test
+  scope:
+    command: git log --all --format='%s' | sed -nE 's/^[[:alnum:]_-]+\(([^)]+)\)!?:.*/\1/p' | sort -u
   branch:
     command: git branch --format='%(refname:short)'
   remote:
@@ -24,12 +26,20 @@ variables:
 
 # Git
 
-## conventional commit
+## git commit a conventional commit
 
-Commits with a `type(scope): subject` prefix. The `type` placeholder is backed by a frontmatter suggestion list — open the picker and you'll see the choices. `scope` and `subject` are free-form.
+Commits with a `type(scope): subject` prefix. `type` offers a fixed suggestion list, and `scope` suggests scopes from commit history across all local branches and tags.
 
 ```bash
 git commit -m "<@type>(<@scope>): <@subject>"
+```
+
+## list previously used conventional commit scopes
+
+Lists all of the previously used scopes in git commit history. Remove the `--all` to search onnly the current branch.
+
+```bash
+git log --all --format='%s' | sed -nE 's/^[[:alnum:]_-]+\(([^)]+)\)!?:.*/\1/p' | sort -u
 ```
 
 ## amend latest commit title
