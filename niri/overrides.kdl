@@ -1,11 +1,45 @@
 // --- Startup ---
 // Spawn vicinae server for a custom launcher
-spawn-at-startup "/home/mark/.local/bin/vicinae" "server"
+spawn-at-startup "~/.local/bin/vicinae" "server"
+// Launch the desktop apps and arrange them (see ~/.scripts/niri-startup.sh)
+spawn-at-startup "~/.scripts/niri-startup.sh"
+
+// --- Workspaces ---
+// Named workspaces always exist, in this order (Mod+1..4).
+workspace "term"
+workspace "web"
+workspace "chat"
+workspace "games"
+
+// --- Startup placement ---
+// at-startup=true: only applies to windows opened in the first ~60s after login.
+window-rule {
+    match at-startup=true app-id="^Alacritty$"
+    open-on-workspace "term"
+    open-maximized true
+}
+window-rule {
+    match at-startup=true app-id="^app\\.zen_browser\\.zen$"
+    open-on-workspace "web"
+    open-maximized true
+}
+window-rule {
+    match at-startup=true app-id="^discord$"
+    match at-startup=true app-id="^spotify$"
+    open-on-workspace "chat"
+    default-column-width { proportion 0.5; }
+}
+window-rule {
+    match at-startup=true app-id="^steam$" title="^Steam$"
+    match at-startup=true app-id="(?i)^heroic$"
+    open-on-workspace "games"
+    default-column-width { proportion 0.5; }
+}
 
 binds {
     // --- Applications ---
     Mod+B hotkey-overlay-title="Open Browser: Zen" { spawn "flatpak" "run" "app.zen_browser.zen"; }
-    Mod+Space hotkey-overlay-title="Open Launcher: Vicinae" { spawn "/home/mark/.local/bin/vicinae" "toggle"; }
+    Mod+Space hotkey-overlay-title="Open Launcher: Vicinae" { spawn "~/.local/bin/vicinae" "toggle"; }
 
     // --- Window/Focus Movement ---
     Mod+Up                              { focus-window-or-workspace-up; }

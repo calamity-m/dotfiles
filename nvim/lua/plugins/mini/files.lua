@@ -109,7 +109,7 @@ vim.api.nvim_create_autocmd("User", {
 -- the saved answer here instead of running Git again for every entry.
 --
 -- This table uses full paths as keys, rather than numeric list positions:
---   ignored['/home/mark/project/nvim.log'] = true
+--   ignored['~/project/nvim.log'] = true
 -- A missing key returns nil, which Lua treats as false in an `if` condition.
 -- Both callbacks can access this table because it is local to this file,
 -- outside either function.
@@ -139,7 +139,7 @@ local sort_with_gitignore = function(entries)
 
 	-- entries[1] is the first entry (Lua lists start at 1).
 	-- fnamemodify(path, ':h') removes the final path component:
-	-- '/home/mark/project/nvim.log' becomes '/home/mark/project'.
+	-- '~/project/nvim.log' becomes the full path.
 	-- All these entries share that parent directory.
 	local parent = vim.fn.fnamemodify(entries[1].path, ":h")
 
