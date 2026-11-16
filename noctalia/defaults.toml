@@ -4,3 +4,7 @@
 
 [theme]
 pure_black_dark = true
+
+[idle.behaviour.screen-off]
+enabled = true
+timeout = 600.0  # seconds
