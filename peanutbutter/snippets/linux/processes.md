@@ -27,6 +27,15 @@ Force-kill whatever process is bound to a TCP port. Destructive: sends `SIGKILL`
 kill -9 $(lsof -t -i:<@port>)
 ```
 
+## pkill process by PID
+
+Send `SIGTERM` to the selected process, allowing it to shut down gracefully.
+Uses the first column of the PID picker output. Destructive: no confirmation prompt.
+
+```bash
+kill -TERM -- "$(awk '{print $1}' <<< '<@pid>')"
+```
+
 ## top CPU processes
 
 Show the processes using the most CPU. `count` includes the header row, so the default of 11 shows the top 10 processes.
