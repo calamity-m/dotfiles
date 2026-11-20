@@ -14,6 +14,14 @@ tags:
 <@command> &>/dev/null
 ```
 
+## mute return code
+
+regardless of the command's exit code, we'll always have a `1`
+
+```bash
+<@command> 2>/dev/null || true
+```
+
 ## pipe output of command to file while tailing it
 
 ```bash
