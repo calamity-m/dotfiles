@@ -29,6 +29,12 @@ jq '.[0] | keys'
 <@command> | jq 'keys'
 ```
 
+## count object keys from command output
+
+```bash
+<@command> | jq 'keys | length'
+```
+
 ## Tail a file and run JQ on each line
 
 ```bash
@@ -45,4 +51,10 @@ tail -f <@json_file> | jq .
 
 ```bash
 <@command> | jq -R
+```
+
+## run jq on a live-tailed file
+
+```bash
+tail -f <@json_file> | jq .
 ```
